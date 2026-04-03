@@ -5,7 +5,7 @@ export default function Footer() {
 
         {/* Brand */}
         <div>
-          <h2 className="text-white text-lg font-semibold mb-3">roapp</h2>
+          <h2 className="text-white text-lg font-semibold mb-3">Beacon Track</h2>
           <p className="text-sm">
             Build, automate and scale your workflows faster.
           </p>
@@ -43,7 +43,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="border-t border-gray-800 mt-10 pt-6 text-center text-sm">
-        © 2026 roapp. All rights reserved.
+        © 2026 Beacon Track. All rights reserved.
       </div>
     </footer>
   );

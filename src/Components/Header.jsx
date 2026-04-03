@@ -11,7 +11,7 @@ export default function Header() {
         {/* Logo */}
         <h1 className="text-xl font-semibold tracking-tight cursor-pointer">
           <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-            roapp
+            Beacon Track
           </span>
         </h1>
 
