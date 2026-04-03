@@ -4,6 +4,7 @@ import Hero from "./pages/Hero";
 import Features from "./pages/Features";
 import CTA from "./pages/CTA";
 import Solutions from "./pages/Solution";
+import Whybeakontrack from "./pages/Whybeacontrack";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Hero />
       <Features />
       <Solutions />
+      <Whybeakontrack />
       <CTA />
       <Footer />
     </div>
