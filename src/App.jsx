@@ -3,6 +3,7 @@ import Footer from "./Components/Footer";
 import Hero from "./pages/Hero";
 import Features from "./pages/Features";
 import CTA from "./pages/CTA";
+import Solutions from "./pages/Solution";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Header />
       <Hero />
       <Features />
+      <Solutions />
       <CTA />
       <Footer />
     </div>
