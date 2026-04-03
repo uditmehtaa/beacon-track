@@ -1,26 +1,46 @@
+import { useEffect, useState } from "react";
+
 export default function Hero() {
+  const images = ["/1.jpeg", "/2.webp", "/3.jpg"]; // 👉 add images in public folder
+
+  const [current, setCurrent] = useState(0);
+
+  // Auto slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-32 pb-24 px-6 text-center overflow-hidden bg-white">
-      
-      {/* Background Image */}
-      <img
-        src="/1.jpeg"   // 👉 put image in public folder
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
-      />
+
+      {/* Carousel Background */}
+      <div className="absolute inset-0">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt=""
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000
+            ${index === current 
+              ? "opacity-50 scale-100" 
+              : "opacity-0 scale-110"}`}
+          />
+        ))}
+      </div>
 
       {/* Glow Effect */}
       <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-accent opacity-20 blur-[140px] rounded-full"></div>
 
-     
-
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
-        
+
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-5 py-1.5 mb-6 text-sm font-medium rounded-full 
-        bg-accent-bg text-accent border border-accent-border 
-        shadow-md">
+        bg-accent-bg text-accent border border-accent-border shadow-md">
           🚀 <span>New: Smarter Workflow Automation</span>
         </div>
 
@@ -40,7 +60,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-           <button className="border border-border px-7 py-3 rounded-xl hover:bg-accent-bg transition">
+          <button className="border border-border px-7 py-3 rounded-xl hover:bg-accent-bg transition">
             Get Started
           </button>
 
