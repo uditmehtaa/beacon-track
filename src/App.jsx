@@ -8,6 +8,10 @@ import Trade from "./pages/Trade";
 import Service from "./pages/Service";
 import Retail from "./pages/Retail";
 import Home from "./pages/Home";
+import ProductPage from "./pages/Product";
+import Solutions1 from "./pages/Solutions1";
+import Pricing from "./pages/Pricing";
+import Docs from "./pages/Docs";
 
 export default function App() {
   return (
@@ -16,6 +20,10 @@ export default function App() {
 
      <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/product" element={<ProductPage />} />
+      <Route path="/solutions" element={<Solutions1 />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="/docs" element={<Docs />} />
       <Route path="/garage" element={<Garage />} />
       <Route path="/technical" element={<Technical />} />
       <Route path="/field" element={<Field />} />

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -9,25 +10,32 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
         {/* Logo */}
-        <h1 className="text-xl font-semibold tracking-tight cursor-pointer">
-          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Beacon Track
-          </span>
-        </h1>
+       <Link to="/">
+  <h1 className="text-xl font-semibold tracking-tight cursor-pointer">
+    <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+      Beacon Track
+    </span>
+  </h1>
+</Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-10 text-gray-300 text-sm font-medium">
-          {["Product", "Solutions", "Pricing", "Docs"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="relative group hover:text-white transition"
-            >
-              {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all group-hover:w-full"></span>
-            </a>
-          ))}
-        </nav>
+      <nav className="hidden md:flex gap-10 text-gray-300 text-sm font-medium">
+  {[
+    { name: "Product", path: "/product" },
+    { name: "Solutions", path: "/solutions" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Docs", path: "/docs" },
+  ].map((item) => (
+    <Link
+      key={item.name}
+      to={item.path}
+      className="relative group hover:text-white transition"
+    >
+      {item.name}
+      <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all group-hover:w-full"></span>
+    </Link>
+  ))}
+</nav>
 
         {/* Desktop CTA */}
         <div className="hidden md:flex gap-4 items-center">
