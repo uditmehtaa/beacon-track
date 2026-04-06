@@ -20,16 +20,16 @@ export default function Features() {
   ];
 
   return (
-    <section className="relative py-24 px-6 border-t border-border overflow-hidden">
-      
-      {/* Background Glow */}
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent opacity-10 blur-[120px] rounded-full"></div>
+    <section className="relative py-24 px-6 border-t border-border overflow-hidden bg-white">
+
+      {/* 🔥 Background Glow (enhanced) */}
+      <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent opacity-10 blur-[140px] rounded-full"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        
+
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold">
+          <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
             Powerful features to{" "}
             <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               scale faster
@@ -46,23 +46,30 @@ export default function Features() {
           {data.map((item, i) => (
             <div
               key={i}
-              className="group p-6 rounded-2xl border border-border bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
+              className="group relative p-6 rounded-2xl border border-border bg-white/70 backdrop-blur-md shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
             >
               
+              {/* ✨ Gradient border glow on hover */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-r from-purple-500/10 to-pink-500/10"></div>
+
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-accent-bg text-accent text-xl mb-4 group-hover:scale-110 transition">
+              <div className="relative z-10 w-12 h-12 flex items-center justify-center rounded-xl bg-accent-bg text-accent text-xl mb-4 
+              group-hover:scale-110 group-hover:rotate-6 transition duration-300">
                 {item.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-heading text-xl font-semibold mb-2">
+              <h3 className="relative z-10 text-heading text-xl font-semibold mb-2">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-text">
+              <p className="relative z-10 text-text">
                 {item.desc}
               </p>
+
+              {/* ✨ Bottom hover line */}
+              <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></div>
             </div>
           ))}
         </div>
