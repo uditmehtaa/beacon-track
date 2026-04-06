@@ -1,138 +1,229 @@
-import React from "react";
-import { FaStar, FaShoppingCart, FaLock } from "react-icons/fa";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import {
+  FaFileInvoice,
+  FaChartLine,
+  FaShieldAlt,
+  FaUsers,
+  FaCheckCircle,
+} from "react-icons/fa";
 
-export default function ProductPage() {
-   useEffect(() => {
-            window.scrollTo(0, 0); 
-          }, []);
+export default function BillingSoftwarePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-   
-    
-    <div className="bg-light min-h-screen pt-20 py-10 px-6 md:px-16">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10">
+    <div className="bg-gray-50">
 
-        {/* LEFT: Product Info */}
-        <div className="lg:col-span-2 bg-white rounded-2xl shadow-soft p-6">
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Image */}
-            <img
-              src="/1.jpeg"
-              alt=""
-              className="w-full h-[350px] object-cover rounded-xl"
-            />
+      {/* HERO */}
+      <section className="text-center py-20 px-6 bg-white relative">
+        <h1 className="text-4xl font-bold text-gray-800">
+          Smart Billing Software for Modern Businesses
+        </h1>
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Create invoices, manage GST, track sales, and grow your business —
+          all in one powerful platform.
+        </p>
 
-            {/* Details */}
-            <div>
-              <h1 className="text-2xl font-bold text-dark mb-2">
-                Premium Gift Box
-              </h1>
+        <button className="mt-6 bg-primary text-white px-6 py-3 rounded-xl shadow hover:opacity-90">
+          Start Free Trial
+        </button>
 
-              <div className="flex items-center gap-1 text-yellow-400 mb-3">
-                {Array(5).fill(0).map((_, i) => <FaStar key={i} />)}
-                <span className="text-gray-500 text-sm ml-2">(120 reviews)</span>
-              </div>
+        {/* Dashboard Preview */}
+        <img
+          src="/3.jpg"
+          alt="dashboard"
+          className="mt-12 mx-auto rounded-xl shadow-2xl border"
+        />
+      </section>
 
-              <p className="text-gray-600 mb-4 text-sm">
-                Perfect for birthdays, anniversaries & special occasions.
-              </p>
-
-              <p className="text-2xl font-semibold text-primary mb-4">
-                ₹1,499
-              </p>
-
-              {/* Options */}
-              <div className="mb-4">
-                <label className="text-sm font-medium">Size</label>
-                <select className="w-full mt-1 border rounded-lg p-2 focus:ring-2 focus:ring-primary">
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-                </select>
-              </div>
-
-              {/* Quantity */}
-              <div>
-                <label className="text-sm font-medium">Quantity</label>
-                <input
-                  type="number"
-                  defaultValue={1}
-                  min={1}
-                  className="w-full mt-1 border rounded-lg p-2"
-                />
-              </div>
-            </div>
+      {/* FEATURES GRID */}
+      <section className="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          {
+            icon: <FaFileInvoice />,
+            title: "GST Invoicing",
+            desc: "Generate invoices instantly with GST compliance.",
+          },
+          {
+            icon: <FaChartLine />,
+            title: "Analytics",
+            desc: "Track revenue with smart dashboards.",
+          },
+          {
+            icon: <FaUsers />,
+            title: "Customers",
+            desc: "Manage clients and billing history easily.",
+          },
+          {
+            icon: <FaShieldAlt />,
+            title: "Secure",
+            desc: "Enterprise-grade data protection.",
+          },
+        ].map((item, i) => (
+          <div key={i} className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <div className="text-primary text-2xl mb-3">{item.icon}</div>
+            <h3 className="font-semibold">{item.title}</h3>
+            <p className="text-gray-600 text-sm mt-2">{item.desc}</p>
           </div>
+        ))}
+      </section>
+      
+{/* PRODUCT DEMO VIDEO */}
+<section className="py-20 px-6 bg-gray-50 text-center">
+  <h2 className="text-2xl font-semibold mb-4">
+    See How It Works
+  </h2>
+  <p className="text-gray-600 mb-10">
+    Watch how our billing software simplifies your workflow in minutes.
+  </p>
 
-          {/* Description */}
-          <div className="mt-8 border-t pt-6">
-            <h2 className="font-semibold text-lg mb-2">Product Details</h2>
-            <p className="text-gray-600 text-sm">
-              This premium gift box includes curated items designed to impress.
-              High-quality packaging, customizable options, and perfect for gifting.
-            </p>
-          </div>
-        </div>
-
-        {/* RIGHT: Billing Summary */}
-        <div className="bg-white rounded-2xl shadow-soft p-6 h-fit sticky top-20">
-          <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
-
-          {/* Item */}
-          <div className="flex justify-between text-sm mb-2">
-            <span>Premium Gift Box</span>
-            <span>₹1,499</span>
-          </div>
-
-          <div className="flex justify-between text-sm mb-2 text-gray-500">
-            <span>Delivery</span>
-            <span>Free</span>
-          </div>
-
-          <div className="flex justify-between text-sm mb-4 text-gray-500">
-            <span>Tax</span>
-            <span>₹99</span>
-          </div>
-
-          <div className="border-t pt-4 flex justify-between font-semibold text-lg mb-6">
-            <span>Total</span>
-            <span>₹1,598</span>
-          </div>
-
-          {/* Buttons */}
-          <button className="w-full bg-primary text-white py-3 rounded-xl flex items-center justify-center gap-2 mb-3 hover:opacity-90">
-            <FaShoppingCart /> Checkout
-          </button>
-
-          <button className="w-full border border-gray-300 py-3 rounded-xl hover:bg-gray-100">
-            Add to Cart
-          </button>
-
-          {/* Security */}
-          <p className="text-xs text-gray-500 mt-4 flex items-center justify-center gap-2">
-            <FaLock /> Secure Payment
+  <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+    <video
+      src="/Recording 2026-04-06 162505.mp4"  
+      controls
+      autoPlay
+      muted
+      loop
+      className="w-full h-full"
+    />
+  </div>
+</section>
+      {/* FEATURE SECTION 1 */}
+      <section className="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-10 items-center">
+        <img
+          src="/3.jpg"
+          alt=""
+          className="rounded-xl shadow-lg"
+        />
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">
+            Create Professional Invoices in Seconds
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Generate branded GST invoices with automatic tax calculations,
+            downloadable PDFs, and real-time sharing.
           </p>
+
+          <ul className="space-y-2 text-sm">
+            <li className="flex gap-2"><FaCheckCircle className="text-green-500"/> GST Ready</li>
+            <li className="flex gap-2"><FaCheckCircle className="text-green-500"/> Auto Calculations</li>
+            <li className="flex gap-2"><FaCheckCircle className="text-green-500"/> PDF Export</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      {/* Related */}
-      <div className="max-w-6xl mx-auto mt-16">
-        <h2 className="text-xl font-semibold mb-6">You may also like</h2>
+      {/* FEATURE SECTION 2 */}
+      <section className="bg-white py-16 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              Powerful Analytics Dashboard
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Get insights into your business performance with real-time charts,
+              revenue tracking, and detailed reports.
+            </p>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[1, 1, 1].map((item) => (
-            <div key={item} className="bg-white p-4 rounded-xl shadow-soft">
-              <img
-                src={`/${item}.jpeg`}
-                className="w-full h-40 object-cover rounded-lg mb-3"
-              />
-              <h3 className="text-sm font-medium">Gift Item {item}</h3>
-              <p className="text-primary text-sm">₹999</p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex gap-2"><FaCheckCircle className="text-green-500"/> Revenue Reports</li>
+              <li className="flex gap-2"><FaCheckCircle className="text-green-500"/> Growth Tracking</li>
+              <li className="flex gap-2"><FaCheckCircle className="text-green-500"/> Smart Insights</li>
+            </ul>
+          </div>
+
+          <img
+            src="/3.jpg"
+            alt=""
+            className="rounded-xl shadow-lg"
+          />
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="py-16 px-6 bg-gray-50">
+        <h2 className="text-2xl font-semibold text-center mb-10">
+          Why Businesses Love Us
+        </h2>
+
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+          {[
+            "Super easy to use",
+            "Fast invoice generation",
+            "Cloud-based access",
+            "Multi-user support",
+            "Affordable pricing",
+            "24/7 support",
+          ].map((point, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <FaCheckCircle className="text-green-500" />
+              <span>{point}</span>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="py-20 px-6 bg-white">
+        <h2 className="text-2xl font-semibold text-center mb-10">
+          Simple Pricing
+        </h2>
+
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          {[
+            {
+              name: "Starter",
+              price: "₹499/mo",
+              features: ["Invoices", "GST Reports"],
+            },
+            {
+              name: "Pro",
+              price: "₹999/mo",
+              features: ["Analytics", "Multi-user"],
+              highlight: true,
+            },
+            {
+              name: "Enterprise",
+              price: "Custom",
+              features: ["All Features", "Support"],
+            },
+          ].map((plan, i) => (
+            <div
+              key={i}
+              className={`p-6 rounded-xl shadow ${
+                plan.highlight ? "border-2 border-primary" : ""
+              }`}
+            >
+              <h3 className="font-semibold">{plan.name}</h3>
+              <p className="text-2xl font-bold mt-2">{plan.price}</p>
+
+              <ul className="mt-4 text-sm space-y-2">
+                {plan.features.map((f, idx) => (
+                  <li key={idx}>• {f}</li>
+                ))}
+              </ul>
+
+              <button className="mt-6 w-full bg-primary text-white py-2 rounded-lg">
+                Choose Plan
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="text-center py-16 bg-gray-50">
+        <h2 className="text-2xl font-semibold">
+          Ready to Simplify Your Billing? 🚀
+        </h2>
+        <p className="text-gray-600 mt-3">
+          Start your free trial today. No credit card required.
+        </p>
+
+        <button className="mt-6 bg-primary text-white px-6 py-3 rounded-xl">
+          Get Started Free
+        </button>
+      </section>
     </div>
   );
 }
