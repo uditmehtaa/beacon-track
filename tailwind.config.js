@@ -10,6 +10,17 @@ export default {
       boxShadow: {
         soft: "0 8px 30px rgba(0,0,0,0.08)",
       },
+
+      // 🔥 ADD THIS (animation)
+      keyframes: {
+        gradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+      },
+      animation: {
+        gradient: "gradient 8s ease infinite",
+      },
     },
   },
   plugins: [],
