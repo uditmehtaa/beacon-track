@@ -25,6 +25,7 @@ export default function Header() {
     { name: "Solutions", path: "/solutions" },
     { name: "Pricing", path: "/pricing" },
     { name: "Docs", path: "/docs" },
+    { name: "Contact", path: "/contact" },
   ].map((item) => (
     <Link
       key={item.name}
@@ -39,9 +40,7 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex gap-4 items-center">
-          <button className="text-gray-300 hover:text-white transition">
-            Login
-          </button>
+         
 
           <button className="bg-white text-black px-5 py-2 rounded-xl shadow-lg hover:scale-105 transition duration-200">
             Get Started

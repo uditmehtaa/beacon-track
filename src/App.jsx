@@ -12,6 +12,7 @@ import ProductPage from "./pages/Product";
 import Solutions1 from "./pages/Solutions1";
 import Pricing from "./pages/Pricing";
 import Docs from "./pages/Docs";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/trade" element={<Trade />} />
       <Route path="/service" element={<Service />} />
       <Route path="/retail" element={<Retail />} />
+      <Route path="/contact" element={<Contact />} />
      </Routes>
 
      <Footer />
