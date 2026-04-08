@@ -1,4 +1,7 @@
-import { FaBolt, FaChartLine, FaPlug } from "react-icons/fa";
+import { 
+  FaBolt, FaChartLine, FaPlug, FaShieldAlt, 
+  FaCloud, FaUsers, FaCogs, FaMobileAlt 
+} from "react-icons/fa";
 
 export default function Features() {
   const data = [
@@ -6,23 +9,56 @@ export default function Features() {
       title: "Automation",
       desc: "Automate repetitive tasks and focus on what matters most.",
       icon: <FaBolt />,
+      tag: "Popular",
     },
     {
       title: "Analytics",
       desc: "Get real-time insights and make data-driven decisions.",
       icon: <FaChartLine />,
+      tag: "",
     },
     {
       title: "Integrations",
       desc: "Seamlessly connect with tools you already use.",
       icon: <FaPlug />,
+      tag: "",
+    },
+    {
+      title: "Security",
+      desc: "Enterprise-grade security to keep your data safe.",
+      icon: <FaShieldAlt />,
+      tag: "New",
+    },
+    {
+      title: "Cloud Sync",
+      desc: "Access your data anytime, anywhere with cloud backup.",
+      icon: <FaCloud />,
+      tag: "",
+    },
+    {
+      title: "Team Collaboration",
+      desc: "Work together with your team in real-time.",
+      icon: <FaUsers />,
+      tag: "",
+    },
+    {
+      title: "Custom Workflows",
+      desc: "Build workflows tailored to your business needs.",
+      icon: <FaCogs />,
+      tag: "",
+    },
+    {
+      title: "Mobile Friendly",
+      desc: "Optimized experience across all devices.",
+      icon: <FaMobileAlt />,
+      tag: "Coming Soon",
     },
   ];
 
   return (
     <section className="relative py-24 px-6 border-t border-border overflow-hidden bg-white">
 
-      {/* 🔥 Background Glow (enhanced) */}
+      {/* Background Glow */}
       <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent opacity-10 blur-[140px] rounded-full"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -42,14 +78,21 @@ export default function Features() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {data.map((item, i) => (
             <div
               key={i}
-              className="group relative p-6 rounded-2xl border border-border bg-white/70 backdrop-blur-md shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              className="group relative p-6 rounded-2xl border border-border bg-gray-200 backdrop-blur-md shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 "
             >
-              
-              {/* ✨ Gradient border glow on hover */}
+
+              {/* Tag */}
+              {item.tag && (
+                <span className="absolute top-4 right-4 text-xs bg-accent/10 text-accent px-2 py-1 rounded-full">
+                  {item.tag}
+                </span>
+              )}
+
+              {/* Hover Glow */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-r from-purple-500/10 to-pink-500/10"></div>
 
               {/* Icon */}
@@ -68,10 +111,17 @@ export default function Features() {
                 {item.desc}
               </p>
 
-              {/* ✨ Bottom hover line */}
+              {/* Bottom Line */}
               <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <button className="bg-primary text-white px-6 py-3 rounded-xl hover:scale-105 transition">
+            Explore All Features →
+          </button>
         </div>
 
       </div>
