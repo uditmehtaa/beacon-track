@@ -56,7 +56,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="relative py-24 px-6 border-t border-border overflow-hidden bg-white">
+    <section className="relative py-20 px-6 border-t border-border overflow-hidden bg-white">
 
       {/* Background Glow */}
       <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent opacity-10 blur-[140px] rounded-full"></div>
@@ -117,12 +117,6 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="bg-primary text-white px-6 py-3 rounded-xl hover:scale-105 transition">
-            Explore All Features →
-          </button>
-        </div>
 
       </div>
     </section>

@@ -44,9 +44,17 @@ export default function Solutions() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-20 px-6 bg-gray-50">
+    <section className="min-h-screen pt-16 pb-20 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+          {/* Heading */}   
+        <div className="md:col-span-2 lg:col-span-3 text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Solutions Tailored for Your Industry
+          </h1>
+          <p className="text-gray-600">
+            Whether you're a garage, repair shop, field service, or retail business — we have powerful solutions designed to streamline your operations and boost growth.
+          </p>
+        </div>
         {sections.map((section, i) => (
           <div
             key={i}
