@@ -30,11 +30,7 @@ export default function BillingSoftwarePage() {
         </button>
 
         {/* Dashboard Preview */}
-        <img
-          src="/3.jpg"
-          alt="dashboard"
-          className="mt-12 mx-auto rounded-xl shadow-2xl border"
-        />
+       
       </section>
 
       {/* FEATURES GRID */}
@@ -80,7 +76,7 @@ export default function BillingSoftwarePage() {
 
   <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
     <video
-      src="/Recording 2026-04-06 162505.mp4"  
+      src="https://ik.imagekit.io/gqpk1bdvr/sr.mp4?updatedAt=1775561767597"  
       controls
       autoPlay
       muted
@@ -92,7 +88,7 @@ export default function BillingSoftwarePage() {
       {/* FEATURE SECTION 1 */}
       <section className="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-10 items-center">
         <img
-          src="/3.jpg"
+          src="https://ik.imagekit.io/gqpk1bdvr/payment-out.png"
           alt=""
           className="rounded-xl shadow-lg"
         />
@@ -133,7 +129,7 @@ export default function BillingSoftwarePage() {
           </div>
 
           <img
-            src="/3.jpg"
+            src="https://ik.imagekit.io/gqpk1bdvr/dash-board.png"
             alt=""
             className="rounded-xl shadow-lg"
           />
