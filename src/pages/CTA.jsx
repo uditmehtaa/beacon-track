@@ -3,7 +3,7 @@ export default function CTA() {
     <section className="relative py-24 px-6 text-center overflow-hidden">
       
       {/* Background Glow */}
-      <div className="absolute inset-0 flex justify-center">
+      <div className="absolute inset-0 flex justify-center bg-blue-300/70">
         <div className="w-[500px] h-[500px] bg-accent opacity-20 blur-[120px] rounded-full"></div>
       </div>
 
@@ -25,20 +25,20 @@ export default function CTA() {
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           
           {/* Button 1 */}
-          <button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group transition-all duration-500 ease-out">
-            <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              Get Started Free
-            </span>
-          </button>
+         <button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
+  <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+  <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+    Get Started Free
+  </span>
+</button>
 
           {/* Button 2 */}
-          <button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group transition-all duration-500 ease-out">
-            <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              Book Demo
-            </span>
-          </button>
+<button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
+  <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+  <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+    Book Demo
+  </span>
+</button>
 
         </div>
 
