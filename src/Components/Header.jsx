@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
+const navigate = useNavigate();
   return (
     <header className="fixed top-0 left-0 w-full bg-black border-b border-gray-800 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -24,8 +25,8 @@ export default function Header() {
     { name: "Product", path: "/product" },
     { name: "Solutions", path: "/solutions" },
     { name: "Pricing", path: "/pricing" },
-    { name: "Docs", path: "/docs" },
-    { name: "Contact", path: "/contact" },
+    { name: "About Us", path: "/aboutus" },
+    { name: "Contact Us", path: "/contact" },
   ].map((item) => (
     <Link
       key={item.name}
@@ -42,7 +43,8 @@ export default function Header() {
         <div className="hidden md:flex gap-4 items-center">
          
 
-          <button className="bg-white text-black px-5 py-2 rounded-xl shadow-lg hover:scale-105 transition duration-200">
+          <button className="bg-white text-black px-5 py-2 rounded-xl shadow-lg hover:scale-105 transition duration-200"
+          onClick={() => navigate("/contact")} >
             Get Started
           </button>
         </div>

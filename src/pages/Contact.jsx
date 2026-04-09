@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -12,78 +17,89 @@ export default function Contact() {
     window.scrollTo(0, 0);
   }, []);
 
+  const phone = "919999999999";
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form); // 👉 connect API here
-    alert("Message sent!");
+
+    // WhatsApp redirect instead of API
+    const msg = `Hi, I'm ${form.name}%0AEmail: ${form.email}%0AMessage: ${form.message}`;
+    window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
   };
 
   return (
-    <section className="min-h-screen py-20 px-6 bg-white">
+    <section className="min-h-screen py-20 px-6 bg-gray-50">
 
-      {/* Heading */}
+      {/* HERO */}
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Contact Us
+        <h1 className="text-5xl font-bold mb-4">
+          Let’s Talk 👋
         </h1>
         <p className="text-gray-600">
-          Have questions or need help? We'd love to hear from you.
+          Have questions or need help? We’re here for you.
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
 
-        {/* Left - Contact Info */}
+        {/* LEFT SIDE */}
         <div className="space-y-6">
 
-          <div className="flex items-start gap-4 p-5 rounded-xl bg-gray-50">
-            <FaEnvelope className="text-primary text-xl mt-1" />
+          {/* Email */}
+          <div className="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg transition">
+            <FaEnvelope className="text-primary text-2xl mt-1" />
             <div>
-              <h3 className="font-semibold">Email</h3>
+              <h3 className="font-semibold text-lg">Email</h3>
               <p className="text-gray-600 text-sm">support@beacontrack.com</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-5 rounded-xl bg-gray-50">
-            <FaPhone className="text-primary text-xl mt-1" />
+          {/* Phone */}
+          <div className="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg transition">
+            <FaPhone className="text-primary text-2xl mt-1" />
             <div>
-              <h3 className="font-semibold">Phone</h3>
+              <h3 className="font-semibold text-lg">Phone</h3>
               <p className="text-gray-600 text-sm">+91 99999 99999</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-5 rounded-xl bg-gray-50">
-            <FaMapMarkerAlt className="text-primary text-xl mt-1" />
+          {/* Location */}
+          <div className="flex items-start gap-4 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg transition">
+            <FaMapMarkerAlt className="text-primary text-2xl mt-1" />
             <div>
-              <h3 className="font-semibold">Office</h3>
+              <h3 className="font-semibold text-lg">Office</h3>
               <p className="text-gray-600 text-sm">
                 Bahadurgarh, Haryana, India
               </p>
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-purple-100 to-pink-100">
-            <h3 className="font-semibold mb-2">Need instant help?</h3>
+          {/* WhatsApp CTA */}
+          <div className="mt-6 p-6 rounded-2xl bg-green-50 border border-green-100">
+            <h3 className="font-semibold mb-2 flex items-center gap-2">
+              <FaWhatsapp className="text-green-500" />
+              Instant Support
+            </h3>
             <p className="text-sm text-gray-600 mb-4">
-              Chat with us directly on WhatsApp.
+              Get quick help directly on WhatsApp.
             </p>
+
             <a
-              href="https://wa.me/919999999999"
+              href={`https://wa.me/${phone}`}
               target="_blank"
-              className="inline-block bg-primary text-white px-5 py-2 rounded-lg"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition shadow"
             >
               Chat on WhatsApp
             </a>
           </div>
-
         </div>
 
-        {/* Right - Form */}
+        {/* RIGHT SIDE - FORM */}
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-xl rounded-2xl p-8 space-y-5 border"
@@ -100,7 +116,7 @@ export default function Contact() {
             value={form.name}
             onChange={handleChange}
             required
-            className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
+            className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-primary transition"
           />
 
           {/* Email */}
@@ -111,7 +127,7 @@ export default function Contact() {
             value={form.email}
             onChange={handleChange}
             required
-            className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
+            className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-primary transition"
           />
 
           {/* Message */}
@@ -122,18 +138,35 @@ export default function Contact() {
             value={form.message}
             onChange={handleChange}
             required
-            className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
+            className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-primary transition"
           ></textarea>
 
           {/* Button */}
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 rounded-lg hover:scale-[1.02] transition"
+            className="w-full bg-primary text-white py-3 rounded-xl hover:shadow-lg hover:scale-[1.02] transition"
           >
-            Send Message →
+            Send via WhatsApp →
           </button>
         </form>
       </div>
+
+      {/* MAP SECTION */}
+      <div className="max-w-6xl mx-auto mt-20">
+        <h2 className="text-2xl font-semibold text-center mb-6">
+          Find Us Here
+        </h2>
+
+        <div className="w-full h-80 rounded-2xl overflow-hidden shadow">
+          <iframe
+            title="map"
+            src="https://maps.google.com/maps?q=Bahadurgarh%20Haryana&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full border-0"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
     </section>
   );
 }

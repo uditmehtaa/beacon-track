@@ -6,8 +6,11 @@ import {
   FaUsers,
   FaCheckCircle,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function BillingSoftwarePage() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -199,9 +202,12 @@ export default function BillingSoftwarePage() {
                 ))}
               </ul>
 
-              <button className="mt-6 w-full bg-primary text-white py-2 rounded-lg">
-                Choose Plan
-              </button>
+               <button
+      onClick={() => navigate("/pricing")}
+      className="mt-6 w-full bg-primary text-white py-2 rounded-lg"
+    >
+      Choose Plan
+    </button>
             </div>
           ))}
         </div>

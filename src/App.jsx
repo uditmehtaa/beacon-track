@@ -11,8 +11,8 @@ import Home from "./pages/Home";
 import ProductPage from "./pages/Product";
 import Solutions1 from "./pages/Solutions1";
 import Pricing from "./pages/Pricing";
-import Docs from "./pages/Docs";
 import Contact from "./pages/Contact";
+import Aboutus from "./pages/Aboutus";
 
 export default function App() {
   return (
@@ -24,7 +24,6 @@ export default function App() {
       <Route path="/product" element={<ProductPage />} />
       <Route path="/solutions" element={<Solutions1 />} />
       <Route path="/pricing" element={<Pricing />} />
-      <Route path="/docs" element={<Docs />} />
       <Route path="/garage" element={<Garage />} />
       <Route path="/technical" element={<Technical />} />
       <Route path="/field" element={<Field />} />
@@ -32,6 +31,7 @@ export default function App() {
       <Route path="/service" element={<Service />} />
       <Route path="/retail" element={<Retail />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/aboutus" element={<Aboutus />} />
      </Routes>
 
      <Footer />

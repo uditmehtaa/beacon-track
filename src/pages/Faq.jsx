@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function FAQ() {
   const [active, setActive] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+ 
   const faqs = [
     {
       category: "Billing",
@@ -99,7 +101,7 @@ export default function FAQ() {
         <p className="text-gray-600 mb-4">
           Our team is here to help you 24/7.
         </p>
-        <button className="bg-primary text-white px-6 py-3 rounded-xl hover:opacity-90">
+        <button       onClick={() => navigate("/contact")} className="bg-primary text-white px-6 py-3 rounded-xl hover:opacity-90">
           Contact Support
         </button>
       </div>
