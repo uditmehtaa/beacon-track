@@ -62,14 +62,14 @@ const navigate = useNavigate();
       {open && (
         <div className="md:hidden px-6 pb-6 bg-black border-t border-gray-800 animate-fadeIn">
           <nav className="flex flex-col gap-4 text-gray-300 font-medium">
-            <a href="#" onClick={() => setOpen(false)}>Product</a>
-            <a href="#" onClick={() => setOpen(false)}>Solutions</a>
-            <a href="#" onClick={() => setOpen(false)}>Pricing</a>
-            <a href="#" onClick={() => setOpen(false)}>Docs</a>
+            <a onClick={() => { navigate("/product"); setOpen(false); }}>Product</a>
+<a onClick={() => { navigate("/solutions"); setOpen(false); }}>Solutions</a>
+<a onClick={() => { navigate("/pricing"); setOpen(false); }}>Pricing</a>
+<a onClick={() => { navigate("/aboutus"); setOpen(false); }}>About Us</a>
+<a onClick={() => { navigate("/contact"); setOpen(false); }}>Contact Us</a>
           </nav>
 
           <div className="mt-6 flex flex-col gap-3">
-            <button className="text-gray-300 text-left">Login</button>
             <button className="bg-white text-black py-2 rounded-lg">
               Get Started
             </button>
