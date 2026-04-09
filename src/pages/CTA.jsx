@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CTA() {
+  const navigate = useNavigate();
   return (
     <section className="relative py-24 px-6 text-center overflow-hidden">
       
@@ -24,16 +27,11 @@ export default function CTA() {
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           
-          {/* Button 1 */}
-         <button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
-  <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-  <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-    Get Started Free
-  </span>
-</button>
+      
 
           {/* Button 2 */}
-<button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300">
+<button className="relative overflow-hidden border border-border px-8 py-3 rounded-xl font-medium group bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300"
+      onClick={() => navigate("/contact")}>
   <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
   <span className="relative z-10 group-hover:text-white transition-colors duration-500">
     Book Demo
