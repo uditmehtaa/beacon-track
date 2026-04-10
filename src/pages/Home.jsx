@@ -4,6 +4,7 @@ import Features from "./Features";
 import Hero from "./Hero";
 import MobilePreview from "./Mobileview";
 import Solutions from "./Solution";
+import HomePage from "./Vyaparstyle";
 import Whybeakontrack from "./Whybeacontrack";
 import { useEffect, useState } from "react";
 import { FaWhatsapp, FaArrowUp } from "react-icons/fa";
@@ -31,9 +32,9 @@ export default function Home() {
     <>
       <Hero />
       <Features />
+      <HomePage />
       <Solutions />
-      <Whybeakontrack />
-      <CTA />
+      <Whybeakontrack />  
       <MobilePreview/>
       <FAQ />
 
