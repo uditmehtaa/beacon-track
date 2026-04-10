@@ -36,7 +36,7 @@ export default function MobilePreview() {
 
             {/* Video inside phone */}
             <video
-              src="/Recording 2026-04-06 162505.mp4" // 👉 put video in public folder
+              src="/WhatsApp Video 2026-04-10 at 17.08.46.mp4" 
               autoPlay
               loop
               muted

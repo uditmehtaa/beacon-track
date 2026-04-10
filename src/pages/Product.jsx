@@ -91,7 +91,7 @@ export default function BillingSoftwarePage() {
       {/* FEATURE SECTION 1 */}
       <section className="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-10 items-center">
         <img
-          src="https://ik.imagekit.io/gqpk1bdvr/payment-out.png"
+          src="https://ik.imagekit.io/gqpk1bdvr/Screenshot%202026-04-10%20172838.png"
           alt=""
           className="rounded-xl shadow-lg"
         />
